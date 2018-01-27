@@ -1,0 +1,14 @@
+
+<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA78dfzZOtBoM_kEsksSnGlWSJ7WgYgFXI",
+    authDomain: "angular4-authentication-90370.firebaseapp.com",
+    databaseURL: "https://angular4-authentication-90370.firebaseio.com",
+    projectId: "angular4-authentication-90370",
+    storageBucket: "angular4-authentication-90370.appspot.com",
+    messagingSenderId: "409793495772"
+  };
+  firebase.initializeApp(config);
+</script>
