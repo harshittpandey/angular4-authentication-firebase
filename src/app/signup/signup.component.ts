@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth'
 import { Router } from '@angular/router';
 import { moveIn, fallIn } from '../router.animations';
 
@@ -16,14 +16,14 @@ export class SignupComponent implements OnInit {
   state: string = '';
   error: any;
 
-  constructor(public af: AngularFire,private router: Router) {
+    constructor (public af: AngularFireAuth,private router :Router) {
 
   }
 
   onSubmit(formData) {
     if(formData.valid) {
       console.log(formData.value);
-      this.af.auth.createUser({
+      this.af.createUserWithEmailAndPassword({
         email: formData.value.email,
         password: formData.value.password
       }).then(
@@ -36,6 +36,9 @@ export class SignupComponent implements OnInit {
         this.error = err;
       })
     }
+  }
+
+  ngOnInit() {
   }
 
 }
